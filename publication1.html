@@ -323,8 +323,18 @@ div {
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHJcmMadTjo13_-0aBAe9q9sLsi2QIyY5tLqQQP_2j3GdY3G5CA6xwBp9QaLGPH9qSEDDhqifdzejh/pubhtml?widget=true&amp;headers=false"></iframe>
 		<br>
 		
-		<iframe src="https://docs.google.com/spreadsheets/d/1NVBseoHfKwsUGOz4KvLhRQq2q4YU-Hh0-6taq3Ek4Nc/edit#gid=1718811403&range=N5:N7"></iframe>
-		
+		 <div id="buttonsContainer"></div>
+
+  <script>
+    // Fetch the HTML content from the Google Apps Script web app
+    fetch('https://script.google.com/macros/s/AKfycbyYZ2BCmP3moFyrJX6qWGNrADk4qbCZi8iI2IiVBWn3GsEYC83zDF_FqTlk67Rnre9C4Q/exec')
+      .then(response => response.text())
+      .then(data => {
+        // Insert the HTML content into the buttonsContainer div
+        document.getElementById('buttonsContainer').innerHTML = data;
+      })
+      .catch(error => console.error('Error:', error));
+  </script>
         
 		<div id="socialFooter">
 		  <p><b>GangaTricks Analytics@2024</b></p>
