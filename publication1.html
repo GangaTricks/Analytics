@@ -326,14 +326,13 @@ div {
 		 <div id="buttonsContainer"></div>
 
   <script>
-    // Fetch the HTML content from the Google Apps Script web app
-    fetch('https://script.google.com/macros/s/AKfycbyYZ2BCmP3moFyrJX6qWGNrADk4qbCZi8iI2IiVBWn3GsEYC83zDF_FqTlk67Rnre9C4Q/exec')
-      .then(response => response.text())
-      .then(data => {
-        // Insert the HTML content into the buttonsContainer div
-        document.getElementById('buttonsContainer').innerHTML = data;
-      })
-      .catch(error => console.error('Error:', error));
+  fetch('https://script.google.com/macros/s/AKfycbyQ6Gvk7vfZ4V5xhp9jSoEgbN689AgVyKsJOmvtaQa5/dev', { mode: 'no-cors' })
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('buttonsContainer').innerHTML = data;
+  })
+  .catch(error => console.error('Error:', error));
+
   </script>
         
 		<div id="socialFooter">
