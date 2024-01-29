@@ -326,12 +326,12 @@ div {
 		 <div id="buttonsContainer"></div>
 
   <script>
-  fetch('https://script.google.com/macros/s/AKfycbyQ6Gvk7vfZ4V5xhp9jSoEgbN689AgVyKsJOmvtaQa5/dev', { mode: 'no-cors' })
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('buttonsContainer').innerHTML = data;
-  })
-  .catch(error => console.error('Error:', error));
+   fetch('https://script.google.com/macros/s/AKfycbyQ6Gvk7vfZ4V5xhp9jSoEgbN689AgVyKsJOmvtaQa5/dev')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('buttonsContainer').innerHTML = data;
+      })
+      .catch(error => console.error('Error:', error));
 
   </script>
         
