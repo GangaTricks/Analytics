@@ -323,17 +323,23 @@ div {
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHJcmMadTjo13_-0aBAe9q9sLsi2QIyY5tLqQQP_2j3GdY3G5CA6xwBp9QaLGPH9qSEDDhqifdzejh/pubhtml?widget=true&amp;headers=false"></iframe>
 		<br>
 		
-		 <div id="buttonsContainer"></div>
+		<div class="grid-container">
+    <div id="averageValue"></div>
+  </div>
+	 <script>
+    // Function to fetch and display the average value
+    function fetchAverageValue() {
+      fetch('https://script.google.com/macros/s/AKfycbyy0_yNncKEhCvxNWzRHHz3wFIF2Vv8vXlbxmL5bGzDa5r0ZdQi7PXzyoiPVmxOEQ91lQ/exec')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('averageValue').textContent = 'Average Value: ' + data;
+        })
+        .catch(error => console.error('Error:', error));
+    }
 
-  <script>
-   fetch('https://script.google.com/macros/s/AKfycbyQ6Gvk7vfZ4V5xhp9jSoEgbN689AgVyKsJOmvtaQa5/dev')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('buttonsContainer').innerHTML = data;
-      })
-      .catch(error => console.error('Error:', error));
-
-  </script>
+    // Call the function when the page loads
+    window.onload = fetchAverageValue;
+  </script>	
         
 		<div id="socialFooter">
 		  <p><b>GangaTricks Analytics@2024</b></p>
