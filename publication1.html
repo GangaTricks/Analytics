@@ -294,6 +294,12 @@ div {
       height: 100%;
       border: 2px solid white;
     }
+
+		 .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+    }
 	</style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
@@ -326,13 +332,13 @@ div {
 		<div class="grid-container">
     <div id="averageValue"></div>
   </div>
-	 <script>
+	 <script> // Function to fetch and display the average value
     // Function to fetch and display the average value
     function fetchAverageValue() {
-      fetch('https://script.google.com/macros/s/AKfycbyy0_yNncKEhCvxNWzRHHz3wFIF2Vv8vXlbxmL5bGzDa5r0ZdQi7PXzyoiPVmxOEQ91lQ/exec')
-        .then(response => response.text())
+      fetch('https://script.google.com/macros/s/AKfycbwsIiLW8TQZXeucY35K6yjkPoouI8jn3PFXZIXGA6EEOpq22Vs-mvWkE_-7Hg8MZXHv_w/exec')
+        .then(response => response.json())
         .then(data => {
-          document.getElementById('averageValue').textContent = 'Average Value: ' + data;
+          document.getElementById('averageValue').textContent = 'Average Value: ' + data.averageValue;
         })
         .catch(error => console.error('Error:', error));
     }
